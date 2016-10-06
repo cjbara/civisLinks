@@ -1,0 +1,40 @@
+<html lang="en" ng-app="civisLinks">
+<head>
+    
+    <config></config>
+
+    <title>Civis Links!</title>
+
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/materialize/dist/js/materialize.min.js"></script>
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-resource/angular-resource.js"></script>
+    <script src="./bower_components/angular-route/angular-route.js"></script>
+    <script src="./bower_components/angular-materialize/src/angular-materialize.js"></script>
+
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"></link>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"></link>
+    <links></links>
+
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+
+    <script src="controllers/authStatus.js"></script>
+    <script src="controllers/mainController.js"></script>
+    <script src="controllers/authController.js"></script>
+    <script src="app.directives.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body ng-controller="mainController as main">
+    <div ng-controller="authController as auth">
+        <navbar></navbar>
+        <div class="container">
+            <br>
+            <new-link></new-link>
+            <show-links></show-links>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<div ng-hide="auth.signedIn" class="row">
+	<div class="col s12">
+        <div class="card-panel blue center-align">
+          <span class="white-text">
+          	You must be signed in to post new links or vote on links!
+          </span>
+      	</div>
+    </div>
+</div>
+
+<div ng-show="auth.signedIn" class="row">
+    <div class="col s2">
+    	<img ng-src="{{auth.user.photoURL}}">
+    	<p>{{auth.user.displayName}}</p>
+	</div>
+	<form class="col s10" name="Form">
+		<h5>Post a new URL to the site!</h5>
+		<div class="input-field col s9">
+			<i class="prefix fa fa-link fa-2x"></i>
+			<input id="my-url" type="text" ng-model="main.currentLink" ng-class="main.validUrl">
+			<label for="my-url" data-error="This is not a valid URL!">Enter URL Here...</label>
+		</div>
+		<div class="input-field col s3">
+	        <button class="waves-effect waves-light btn blue" ng-click="main.addLink()" validation-submit="Form">Submit Link</button>
+	    </div>
+	</form>
+</div>

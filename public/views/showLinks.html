@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="input-field col s12">
+	    <select class="blue-text" ng-model="main.selectedSort[key]" material-select watch>
+	        <option ng-value="key" ng-repeat="(key, option) in main.sortOptions">{{option.value}}</option>
+	    </select>
+	    <label>Sort By</label>
+	</div>
+</div>
+<div class="row">
+<ul class="collection">
+	<li class="collection-item avatar" ng-repeat="(id, link) in main.links | orderBy : main.sortOptions[main.selectedSort].property : main.sortOptions[main.selectedSort].reverse">
+		<img ng-src="{{link.userPicture}}" class="circle">
+		<span class="title">{{link.userName}}</span><br>
+		<a href="{{link.url}}">{{link.url}}</a><br>
+
+		<span>{{main.calcTime(link.timestamp)}} ago</span>
+
+		<div class="secondary-content center-align">
+			<a style="cursor: pointer;" ng-click="main.upvote(link.id)" ng-show="auth.signedIn"><i class="fa fa-chevron-up {{main.upVoteColor(link)}}-text" aria-hidden="true"></i></a><br>
+
+			<span class="black-text">{{main.calcVotes(link)}}</span><br>
+			
+			<a style="cursor: pointer;" ng-click="main.downvote(link.id)" ng-show="auth.signedIn"><i class="fa fa-chevron-down {{main.downVoteColor(link)}}-text" aria-hidden="true"></i></a>
+		</div>
+	</li>
+</ul>
+</div>
+	

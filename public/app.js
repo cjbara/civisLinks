@@ -1,0 +1,1 @@
+angular.module('civisLinks', ['mainCtrl', 'authCtrl', 'authStatus', 'app.directives', 'ui.materialize']);

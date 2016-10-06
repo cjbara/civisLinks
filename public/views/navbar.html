@@ -1,0 +1,25 @@
+<!--Navbar-->
+<nav class="navbar navbar-inverse navbar-fixed-top blue darken-4">
+    <div class="container">
+        <div class="navbar-header">
+            <span class="brand-logo">Civis Links App</span>
+        </div>
+        <ul class="right hide-on-med-and-down">
+            <a ng-hide="auth.signedIn" href='#loginModal' modal>Sign In</a>
+            <a ng-show="auth.signedIn" ng-click="auth.logout()">Sign Out</a>
+        </ul>
+    </div>
+</nav>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <h4>Sign In to Create Links!</h4>
+        <a ng-click="auth.fblogin()" href="#">
+            <button class='btn waves-effect waves-light' style="background-color: #3B5998 !important; color: #ffffff !important"><i class="fa fa-facebook-official" aria-hidden="true"></i> Log in With Facebook</button>
+        </a>
+    </div>
+    <div class="modal-footer" ng-hide="true">
+      <a href="#!" id="closeModal" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>

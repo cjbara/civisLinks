@@ -1,0 +1,29 @@
+<div ng-controller="sidebarController as side" class="sidebar">
+ <ul id="slide-out" class="side-nav fixed">
+    <li>
+    	<div class="userView">
+			<img class="circle center" src="assets/images/coryjbara.jpg">
+			<span class="name center">Cory Jbara</span>
+			<span class="name center"><a href="mailto:cjbara@nd.edu">cjbara@nd.edu</a></span>
+            <div class="connect-button text-center waves-effect waves-light" id="linkedin">
+                <a href="https://www.linkedin.com/pub/cory-jbara/76/41/978" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="connect-button text-center waves-effect" id="github">
+                <a href="https://github.com/cjbara" target="_blank">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="connect-button text-center waves-effect waves-light" id="facebook">
+                <a href="https://www.facebook.com/cory.jbara" target="_blank">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </li>
+    <li ng-repeat="tab in side.tabs" class="sidemenu">
+    	<a class="waves-effect" ng-href="#/{{tab.link}}">{{tab.title}}</a>
+    </li>
+  </ul>
+</div>
